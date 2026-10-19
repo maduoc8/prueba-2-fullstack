@@ -7,7 +7,6 @@ function correoValido(correo) {
     return partes.length === 2 && partes[0] !== "" && ["duoc.cl", "profesor.duoc.cl", "gmail.com"].includes(partes[1]);
 }
 
-// modulo 11: si da 11 es 0 y si da 10 es K
 function digitoVerificador(cuerpo) {
     let suma = 0;
     let multiplo = 2;
@@ -23,7 +22,6 @@ function digitoVerificador(cuerpo) {
     return String(resto);
 }
 
-// se usa para nuevo usuario y para editar, en nuevo llega un usuario vacio
 function FormularioUsuario({ usuario, esNuevo, irA }) {
     const [run, setRun] = useState(usuario.run);
     const [nombre, setNombre] = useState(usuario.nombre);
@@ -39,7 +37,6 @@ function FormularioUsuario({ usuario, esNuevo, irA }) {
     const [enviado, setEnviado] = useState(false);
     const [mensaje, setMensaje] = useState("");
 
-    // al editar el run no se cambia, asi que solo se valida en nuevo
     let errorRun = "";
     if (esNuevo) {
         const valor = run.trim().toUpperCase();
@@ -63,7 +60,6 @@ function FormularioUsuario({ usuario, esNuevo, irA }) {
     const errorComuna = comuna === "" ? "Debe seleccionar una comuna." : "";
     const errorDireccion = direccion.trim() === "" ? "La dirección es obligatoria." : "";
 
-    // en editar la contraseña se puede dejar vacia para no cambiarla
     let errorContrasena = "";
     if (contrasena === "" && esNuevo) errorContrasena = "La contraseña es obligatoria.";
     else if (contrasena !== "" && (contrasena.length < 4 || contrasena.length > 10)) errorContrasena = "La contraseña debe tener entre 4 y 10 caracteres.";

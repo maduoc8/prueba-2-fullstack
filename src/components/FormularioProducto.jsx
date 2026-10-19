@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Row, Col, Card, Form, Button, Alert, Image } from "react-bootstrap";
 
-// se usa para nuevo producto y para editar, en nuevo llega un producto vacio
 function FormularioProducto({ producto, esNuevo, irA }) {
     const [codigo, setCodigo] = useState(producto.codigo);
     const [categoria, setCategoria] = useState(producto.categoria);
@@ -21,7 +20,6 @@ function FormularioProducto({ producto, esNuevo, irA }) {
     const errorCategoria = categoria === "" ? "Debe seleccionar una categoría." : "";
     const errorNombre = nombre.trim() === "" ? "El nombre del producto es obligatorio." : "";
 
-    // precio 0 si se puede, el producto queda GRATIS
     let errorPrecio = "";
     if (precio === "") errorPrecio = "El precio es obligatorio.";
     else if (Number(precio) < 0) errorPrecio = "El precio no puede ser negativo.";
@@ -35,7 +33,6 @@ function FormularioProducto({ producto, esNuevo, irA }) {
         errorCritico = "El stock crítico debe ser un número entero igual o mayor a 0.";
     }
 
-    // es solo un aviso, no impide guardar
     const stockBajo = stock !== "" && stockCritico !== "" && Number(stock) <= Number(stockCritico);
 
     function enviar(e) {

@@ -45,7 +45,6 @@ function Registro({ irA }) {
     const errorContrasena = contrasena.length >= 4 && contrasena.length <= 10 ? "" : "La contraseña debe tener entre 4 y 10 caracteres.";
     const errorConfirmar = confirmar === contrasena ? "" : "Las contraseñas no coinciden.";
 
-    // fecha y telefono son opcionales, solo se revisan si escriben algo
     const errorFecha = fechaNacimiento && calcularEdad(fechaNacimiento) < 18 ? "Debes ser mayor de 18 años." : "";
     const errorTelefono = telefono && !/^\+569[0-9]{8}$/.test(telefono) ? "Ingrese un teléfono válido, por ejemplo +56912345678." : "";
 
@@ -53,7 +52,6 @@ function Registro({ irA }) {
     if (direccion.trim() === "") errorDireccion = "La dirección es obligatoria.";
     else if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9\s.,#-]+$/.test(direccion.trim())) errorDireccion = "La dirección contiene caracteres no válidos.";
 
-    // el boton se activa solo cuando todo esta bien
     const valido = errorRun === "" && errorNombre === "" && errorApellidos === "" && errorCorreo === ""
         && errorContrasena === "" && errorConfirmar === "" && errorFecha === "" && errorTelefono === ""
         && region !== "" && comuna !== "" && errorDireccion === "";

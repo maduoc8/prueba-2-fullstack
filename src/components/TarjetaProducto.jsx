@@ -1,7 +1,6 @@
 import { Card, Button } from "react-bootstrap";
 import { formatoPesos } from "../data/productos";
 
-// si le pasan agregarAlCarrito es la tarjeta del catalogo (con el boton Añadir)
 function TarjetaProducto({ producto, irA, agregarAlCarrito }) {
     return (
         <Card className="h-100 shadow-sm">

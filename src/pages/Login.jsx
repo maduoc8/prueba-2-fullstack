@@ -31,7 +31,6 @@ function Login({ irA }) {
             localStorage.removeItem("correo-recordado");
         }
 
-        // el admin entra al panel, para el resto todavia falta el backend
         if (correo.trim().toLowerCase() === "admin@duoc.cl") {
             irA("admin");
         } else {

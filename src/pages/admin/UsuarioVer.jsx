@@ -7,7 +7,6 @@ const descripcionTipo = {
     cliente: "compras en la tienda"
 };
 
-// cada fila es: modulo, ver, crear, editar, eliminar
 const permisos = {
     administrador: [
         ["Productos", "Sí", "Sí", "Sí", "Sí"],

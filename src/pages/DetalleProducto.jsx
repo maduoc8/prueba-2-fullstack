@@ -9,7 +9,6 @@ function DetalleProducto({ codigo, irA, agregarAlCarrito }) {
     const producto = productos.find(p => p.codigo === codigo);
     const relacionados = productos.filter(p => p.categoria === producto.categoria && p.codigo !== codigo).slice(0, 5);
 
-    // se pueden pedir hasta 5 de una vez, o menos si no hay tanto stock
     const opciones = [];
     for (let i = 1; i <= Math.min(producto.stock, 5); i++) {
         opciones.push(i);

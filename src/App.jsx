@@ -30,7 +30,6 @@ import UsuarioEditar from "./pages/admin/UsuarioEditar";
 
 function App() {
     const [pagina, setPagina] = useState("inicio");
-    // aca va el codigo del producto, el run del usuario o la categoria, depende de la pagina
     const [seleccionado, setSeleccionado] = useState("");
     const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || []);
     const [mensaje, setMensaje] = useState("");
@@ -41,8 +40,6 @@ function App() {
         setMensaje("");
         window.scrollTo(0, 0);
     }
-
-    // ----------- carrito
 
     function guardarCarrito(nuevoCarrito) {
         setCarrito(nuevoCarrito);
@@ -93,8 +90,6 @@ function App() {
         cantidadTotal += linea.cantidad;
     }
 
-    // ----------- panel de administracion
-
     if (pagina.startsWith("admin")) {
         return (
             <Container fluid>
@@ -122,8 +117,6 @@ function App() {
             </Container>
         );
     }
-
-    // ----------- tienda
 
     return (
         <>

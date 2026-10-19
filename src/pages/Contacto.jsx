@@ -15,7 +15,6 @@ function Contacto() {
     const [mensaje, setMensaje] = useState("");
 
     const errorNombre = nombre.trim() === "" ? "El nombre es obligatorio." : "";
-    // el correo es opcional, solo se revisa si escriben algo
     const errorCorreo = correo && !correoValido(correo) ? "Use un correo @duoc.cl, @profesor.duoc.cl o @gmail.com." : "";
     const errorComentario = comentario.trim() === "" ? "El comentario es obligatorio." : "";
 

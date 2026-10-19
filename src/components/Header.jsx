@@ -30,7 +30,6 @@ function Header({ pagina, irA, cantidad }) {
                 </Container>
             </Navbar>
 
-            {/* la barra de cuenta solo salia en el home y en productos */}
             {(pagina === "inicio" || pagina === "productos") && (
                 <div className="bg-body-tertiary border-bottom py-2">
                     <Container className="d-flex justify-content-end gap-2 small">

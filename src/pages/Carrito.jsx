@@ -45,7 +45,6 @@ function Carrito({ carrito, irA, cambiarCantidad, eliminarDelCarrito }) {
                                                     max={producto.stock}
                                                     className="text-center"
                                                     onChange={e => {
-                                                        // si borran el numero no hacemos nada, para que no se elimine solo
                                                         const nuevaCantidad = Number(e.target.value);
                                                         if (nuevaCantidad >= 1) cambiarCantidad(item.codigo, nuevaCantidad);
                                                     }}
